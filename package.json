@@ -1,0 +1,23 @@
+{
+  "name": "cypress-io",
+  "version": "1.0.0",
+  "description": "Repositório criado com o propósito de registrar meus estudos no framework Cypress-io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuanAccioly/Cypress-io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuanAccioly/Cypress-io/issues"
+  },
+  "homepage": "https://github.com/LuanAccioly/Cypress-io#readme",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
+}
