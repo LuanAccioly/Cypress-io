@@ -35,7 +35,7 @@ Repositório criado com o propósito de registrar meus estudos no framework Cypr
 - Invoke
 - Dívida: Reutilizando o título
 - Dívida: Combos
-### Pontos de atenção
+### [Pontos de atenção](cypress/e2e/Pontos%20de%20aten%C3%A7%C3%A3o/)
 - Mocks
 - Alert
 - Alert com Stub
