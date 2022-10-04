@@ -1,5 +1,15 @@
 # Pontos de Atenção
 
+- [Pontos de Atenção](#pontos-de-atenção)
+  - [iFrame](#iframe)
+  - [Limitações](#limitações)
+  - [Possíveis soluções](#possíveis-soluções)
+    - [Executar um teste dedicado para o iFrame na sua página original](#executar-um-teste-dedicado-para-o-iframe-na-sua-página-original)
+    - [Plugin iFrame](#plugin-iframe)
+    - [Assuntos relacionados](#assuntos-relacionados)
+
+---
+
 ## iFrame
 
 > É uma tag ou etiqueta em um documento HTML que viabiliza a inclusão de outro documento HTML dentro do primeiro. Em outras palavras, ele permite que, a partir de uma página inicial, seja possível abrir uma seção de outra página qualquer
@@ -10,8 +20,8 @@ Podemos exemplificar utilizando o playground [wcaquino](https://wcaquino.me/cypr
 
 - Localizamos o iFrame na página que contém um textArea
 - Reunimos em uma variável todo o conteúdo dentro da tag `body` do iFrame
-- Invés de `cy.get()` utilizamos `cy.wrap()` passando como parâmetro a váriavel criada anteriormente 
-  - Localizamos o elemento que desejamos (neste caso, a textArea) 
+- Invés de `cy.get()` utilizamos `cy.wrap()` passando como parâmetro a váriavel criada anteriormente
+  - Localizamos o elemento que desejamos (neste caso, a textArea)
   - Podemos utilizar a função `type()` como faríamos normalmente
 
 ```javascript
@@ -26,7 +36,7 @@ Podemos exemplificar utilizando o playground [wcaquino](https://wcaquino.me/cypr
 
 ## Limitações
 
-- Cypress não consegue lidar com Alerts vindos de dentro de um iFrame. 
+- Cypress não consegue lidar com Alerts vindos de dentro de um iFrame.
 
 Exemplo:
 
@@ -41,6 +51,19 @@ Exemplo:
 ## Possíveis soluções
 
 ### Executar um teste dedicado para o iFrame na sua página original
+
+- Ao inspecionar um iFrame, podemos ver o link que nos leva diretamente para seu conteúdo.
+- A partir disso, podemos iniciar um novo teste direcionado ao iFrame.
+  - Visitamos o link do iFrame
+  - Clicamos no mesmo botão que gera o Alert
+
+```Javascript
+it('Teste diretamente do iFrame', () => {
+        cy.visit('https://wcaquino.me/cypress/frame.html')
+        cy.get('#otherButton').click();
+        
+    })
+```
 
 ### Plugin iFrame
 
