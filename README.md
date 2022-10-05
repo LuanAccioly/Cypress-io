@@ -1,8 +1,18 @@
+- [Cypress-io](#cypress-io)
+  - [Conteúdo](#conteúdo)
+    - [Cypress básico](#cypress-básico)
+    - [Elementos mais comuns](#elementos-mais-comuns)
+    - [Sincronismo](#sincronismo)
+    - [Helpers](#helpers)
+    - [Pontos de atenção](#pontos-de-atenção)
+    - [Outras funcionalidades de Cypress](#outras-funcionalidades-de-cypress)
+  - [Links importantes](#links-importantes)
+
 # Cypress-io
 Repositório criado com o propósito de registrar meus estudos no framework Cypress-io
 
 ## Conteúdo
----
+
 ### [Cypress básico](cypress/e2e/Cypress%20basico/)
 - Ambiente
 - Arrow Functions
@@ -54,3 +64,10 @@ Repositório criado com o propósito de registrar meus estudos no framework Cypr
 - Clock
 - Tick
 - ...
+
+---
+
+## Links importantes
+
+1. [Documentação oficial Cypress](https://docs.cypress.io/guides/overview/why-cypress) 
+2. [Cypress-example-recipes](https://github.com/cypress-io/cypress-example-recipes)
