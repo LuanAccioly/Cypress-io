@@ -4,9 +4,10 @@
   - [Possíveis soluções](#possíveis-soluções)
     - [Executar um teste dedicado para o iFrame na sua página original](#executar-um-teste-dedicado-para-o-iframe-na-sua-página-original)
     - [Plugin iFrame](#plugin-iframe)
+      - [Instalando](#instalando)
+      - [Usando](#usando)
     - [Assuntos relacionados](#assuntos-relacionados)
 
----
 
 # Pontos de Atenção
 
@@ -66,6 +67,53 @@ it('Teste diretamente do iFrame', () => {
 ```
 
 ### Plugin iFrame
+
+> Criado por um usuário do Cypress. Consiste em comandos personalizados, simplificando o trabalho com elementos dentro de um iFrame.
+
+#### Instalando
+
+```
+npm install -D cypress-iframe
+```
+
+#### Usando
+
+Utilizando as três variações do plugin
+
+```frameLoaded()``` Verifica se um iFrame foi carregado na página
+
+Exemplo:
+
+```Javascript
+// Verificará se o iframe é carregado em qualquer página que não seja 'about:blank'
+cy.frameLoaded()
+
+// Verificará se o iframe é carregado em qualquer URL que contenha a parte do caminho fornecido
+cy.frameLoaded({ url: 'https://google.com' })
+cy.frameLoaded({ url: '/join' })
+cy.frameLoaded({ url: '?some=query' })
+cy.frameLoaded({ url: '#/hash/path' })
+
+// Também podemos utilizar um seletor para verificar se um iFrame específico foi carregado
+cy.frameLoaded('#my-frame')
+cy.frameLoaded('#my-frame', { url: '/join' })
+
+```
+
+Refazendo o teste "Digitando em um iFrame" utilizando o plugin
+
+```Javascript
+    it('Digitando no iFrame', () => {
+        cy.visit('https://wcaquino.me/cypress/componentes.html')
+        cy.frameLoaded('#frame1')
+        cy.iframe().find('#tfield').type('digitando em um iframe')
+        cy.iframe().find('#tfield').should('have.value','digitando em um iframe')
+    })
+```
+
+- Utilizando o plugin, não foi possível contornar o problema da espera infinita pelo Alert
+
+> Cypress não tira snapshots dentro de iframes. Por isso, mesmo que estejamos usando essa lib, em nossos testes, ao passar o mouse sobre os comandos executados em um iframe, um espaço reservado será exibido em vez do conteúdo real do iframe quando o comando foi executado.
 
 ---
 
