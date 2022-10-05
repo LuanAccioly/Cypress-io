@@ -5,7 +5,7 @@
     - [Executar um teste dedicado para o iFrame na sua página original](#executar-um-teste-dedicado-para-o-iframe-na-sua-página-original)
     - [Plugin iFrame](#plugin-iframe)
       - [Instalando](#instalando)
-      - [Usando](#usando)
+      - [Utilizando as três variações do plugin](#utilizando-as-três-variações-do-plugin)
     - [Assuntos relacionados](#assuntos-relacionados)
 
 
@@ -33,8 +33,6 @@ Podemos exemplificar utilizando o playground [wcaquino](https://wcaquino.me/cypr
         })
 ```
 
----
-
 ## Limitações
 
 - Cypress não consegue lidar com Alerts vindos de dentro de um iFrame.
@@ -46,8 +44,6 @@ Exemplo:
   - `cy.wrap(body).find('#otherButton').click()`
   - O Cypress fica esperando que o Alert seja fechado por alguém e não conclui o teste se o ALert não for encerrado manualmente
   - ![iframe](/imgs/botaoiFrame.png)
-
----
 
 ## Possíveis soluções
 
@@ -78,9 +74,7 @@ it('Teste diretamente do iFrame', () => {
 npm install -D cypress-iframe
 ```
 
-#### Usando
-
-Utilizando as três variações do plugin
+#### Utilizando as três variações do plugin
 
 ```frameLoaded()``` Verifica se um iFrame foi carregado na página
 
@@ -113,7 +107,7 @@ Refazendo o teste "Digitando em um iFrame" utilizando o plugin
     })
 ```
 
-- Utilizando o plugin, não foi possível contornar o problema da espera infinita pelo Alert
+> Utilizando o plugin, não foi possível contornar o problema da espera infinita pelo Alert
 
 > Cypress não tira snapshots dentro de iframes. Por isso, mesmo que estejamos usando essa lib, em nossos testes, ao passar o mouse sobre os comandos executados em um iframe, um espaço reservado será exibido em vez do conteúdo real do iframe quando o comando foi executado.
 
