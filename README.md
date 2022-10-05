@@ -71,3 +71,4 @@ Repositório criado com o propósito de registrar meus estudos no framework Cypr
 
 1. [Documentação oficial Cypress](https://docs.cypress.io/guides/overview/why-cypress) 
 2. [Cypress-example-recipes](https://github.com/cypress-io/cypress-example-recipes)
+3. [Interagindo com iframes](https://github.com/cypress-io/cypress-example-recipes/tree/master/examples/blogs__iframes)
