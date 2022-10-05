@@ -66,6 +66,8 @@ it('Teste diretamente do iFrame', () => {
     })
 ```
 
+---
+
 ### Plugin iFrame
 
 > Criado por um usuário do Cypress. Consiste em comandos personalizados, simplificando o trabalho com elementos dentro de um iFrame.
