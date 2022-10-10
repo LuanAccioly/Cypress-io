@@ -33,6 +33,8 @@ Podemos exemplificar utilizando o playground [wcaquino](https://wcaquino.me/cypr
         })
 ```
 
+
+
 ## Limitações
 
 - Cypress não consegue lidar com Alerts vindos de dentro de um iFrame.
